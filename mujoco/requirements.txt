@@ -1,0 +1,5 @@
+mujoco==3.16.0
+numpy>=1.26,<3
+onnxruntime>=1.20,<2
+PyYAML>=6,<7
+matplotlib>=3.8,<4

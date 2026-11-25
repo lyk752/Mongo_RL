@@ -1,0 +1,5 @@
+{
+  "policy": "policies/flat_2026-10-26_21-35-54_model_8500/exported/policy.onnx",
+  "training_run": "logs/rsl_rl/mongo_flat_direct/2026-10-26_21-35-54",
+  "checkpoint": "model_8500.pt"
+}

@@ -1,0 +1,38 @@
+{
+  "profile": "mongo_24v_speed_guard_v2",
+  "speed_taper_start_fraction": 0.9,
+  "voltage_v": 24.0,
+  "physics_dt_s": 0.002,
+  "policy_decimation": 10,
+  "motors": {
+    "legs_act": {
+      "model": "MG6012-i36-24V",
+      "stiffness": 40.0,
+      "damping": 4.0,
+      "effort_limit_nm": 25.0,
+      "rated_velocity_rad_s": 3.4557519189487724,
+      "velocity_limit_rad_s": 4.71238898038469,
+      "armature_kg_m2": 0.120528
+    },
+    "front_arm": {
+      "model": "MG5010-i10",
+      "reference": "MG5010E-i10 datasheet; non-E hardware equivalence remains unverified",
+      "stiffness": 40.0,
+      "damping": 2.0,
+      "effort_limit_nm": 4.0,
+      "rated_velocity_rad_s": 24.609142453120047,
+      "velocity_limit_rad_s": 33.510321638291124,
+      "armature_kg_m2": 0.0085
+    },
+    "wheel": {
+      "model": "MF9025-16T-24V",
+      "stiffness": 0.0,
+      "damping": 1.0,
+      "effort_limit_nm": 2.42,
+      "rated_velocity_rad_s": 51.312680008633286,
+      "velocity_limit_rad_s": 74.35102613495843,
+      "armature_kg_m2": 0.0
+    }
+  },
+  "note": "Output-shaft SI units. Continuous effort limits; directional speed guard tapers propulsive effort from 90% to 100% of no-load speed, retains full commanded braking, and never clips physical velocity state. External forces may cause overspeed. The 90% onset is an engineering guard, not a measured torque-speed curve. Wheel armature is zero by user instruction."
+}

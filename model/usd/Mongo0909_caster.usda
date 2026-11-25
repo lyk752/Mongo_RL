@@ -1,0 +1,37 @@
+#usda 1.0
+(
+    defaultPrim = "wl0901"
+    subLayers = [
+        @Mongo0909.usd@
+    ]
+)
+
+# Non-destructive overrides for the spherical front caster.
+#
+# The joint has no cone limits or drives, so changing the spherical joint's
+# principal/twist axis from Y to X does not change its three free rotational
+# degrees of freedom.  It only uses the axis convention supported by the
+# PhysX tensor articulation interface.
+over "wl0901"
+{
+    over "joints"
+    {
+        over "front_podarthrum_joint"
+        {
+            token physics:axis = "X"
+        }
+    }
+
+    over "front_wheel"
+    {
+        # A small finite contact patch adds resistance to spinning the ball
+        # about the contact normal.  Rolling resistance about the horizontal
+        # axes is provided by the joint Coulomb/viscous friction configured in
+        # mongo.py.
+        over "Sphere"
+        {
+            float physxCollision:minTorsionalPatchRadius = 0.001
+            float physxCollision:torsionalPatchRadius = 0.003
+        }
+    }
+}

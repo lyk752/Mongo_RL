@@ -1,0 +1,88 @@
+{
+  "policy_rate_hz": 50.0,
+  "servo_rate_hz": 500.0,
+  "policy_decimation": 10,
+  "motor_profile": "mongo_24v_speed_guard_v2",
+  "motor_speed_guard": {
+    "legs_act": {
+      "enabled": true,
+      "taper_start_fraction": 0.9,
+      "velocity_limit": {
+        "left_hip_joint": 4.71238898038469,
+        "right_hip_joint": 4.71238898038469,
+        "left_parallel_1_joint": 4.71238898038469,
+        "right_parallel_1_joint": 4.71238898038469
+      },
+      "velocity_source": "native"
+    },
+    "front_arm": {
+      "enabled": true,
+      "taper_start_fraction": 0.9,
+      "velocity_limit": {
+        "front_hip_joint": 33.510321638291124
+      },
+      "velocity_source": "native"
+    },
+    "wheel": {
+      "enabled": true,
+      "taper_start_fraction": 0.9,
+      "velocity_limit": {
+        "left_podarthrum_joint": 74.35102613495843,
+        "right_podarthrum_joint": 74.35102613495843
+      },
+      "velocity_source": "native"
+    }
+  },
+  "action_order": [
+    "left_hip_joint",
+    "right_hip_joint",
+    "left_parallel_1_joint",
+    "right_parallel_1_joint",
+    "left_podarthrum_joint",
+    "right_podarthrum_joint"
+  ],
+  "low_pass_enabled": false,
+  "leg_current_weight": 0.3,
+  "wheel_current_weight": 0.3,
+  "slew_rate_limit_enabled": false,
+  "leg_max_delta_per_policy_step": 0.1,
+  "wheel_max_delta_per_policy_step": 0.2,
+  "leg_action_scale_rad": 0.5,
+  "wheel_action_scale_rad_s": 10.0,
+  "actor_previous_action_semantics": "conditioned_policy_action_before_joint_target_clipping",
+  "actor_joint_position_semantics": "absolute_radians",
+  "joint_velocity_source": "position_delta",
+  "sensor_sample_phase": "before_last_physics_substep",
+  "pd_velocity_source": "position_delta",
+  "actor_front_arm_target_semantics": "absolute_radians",
+  "mute_wheel_pos_obs": true,
+  "actor_single_frame_dim": 31,
+  "actor_history_frames": 5,
+  "actor_input_dim": 155,
+  "actor_history_order": "oldest_to_newest",
+  "actor_history_reset": "repeat_first_valid_frame",
+  "action_delay_enabled": false,
+  "effective_action_delay_steps": {
+    "leg_actions": [
+      0,
+      0
+    ],
+    "wheel_actions": [
+      0,
+      0
+    ]
+  },
+  "configured_action_delay_steps_dormant": {
+    "leg_actions": [
+      5,
+      5
+    ],
+    "wheel_actions": [
+      5,
+      5
+    ]
+  },
+  "physics_step_ms": 2.0,
+  "effective_action_delay_ms": 0.0,
+  "deployment_note": "Run raw policy output through action_processor.pt and call reset() at startup. Match the recorded conditioning flags and action scales. Simulation action delay is not included in action_processor.pt."
+}

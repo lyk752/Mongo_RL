@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Isaac Lab / Isaac Sim
+logs/
+outputs/
+.nvidia-omniverse/
+*.usd.lock
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+*.swp
+
+# Local overrides
+.env

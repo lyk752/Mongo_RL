@@ -1,0 +1,22 @@
+{
+  "sim": {"dt": 0.002}, "decimation": 10,
+  "motor_profile": "mongo_24v_speed_guard_v2",
+  "max_wheel_vel": 51.312680008633286,
+  "max_wheel_torque": 2.42,
+  "joint_velocity_source": "position_delta",
+  "num_single_obs": 31, "num_obs_hist": 5,
+  "front_arm_command_upper_limit_deg": 50.0,
+  "mute_wheel_pos_obs": true,
+  "obs_input_clip_cfg": {
+    "command": 100.0, "height_cmd": [0.0, 1.0], "root_ang_vel_b": 100.0,
+    "projected_gravity_b": 100.0, "joint_pos": 100.0,
+    "joint_vel_leg": 200.0, "joint_vel_wheel": 200.0,
+    "actions": 100.0, "front_arm_target": 10.0
+  },
+  "obs_input_scale_enabled": true,
+  "obs_input_scale_cfg": {
+    "command": {"lin_vel_x": 1.0, "lin_vel_y": 1.0, "ang_vel_z": 1.0},
+    "height_cmd": 5.0, "root_ang_vel_b": 0.5,
+    "joint_vel_leg": 0.1, "joint_vel_wheel": 0.1, "front_arm_target": 1.0
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "checkpoint": "/home/inin/workspace/Mongo_RL/logs/rsl_rl/mongo_flat_direct/2026-10-26_21-35-54/model_8500.pt",
+  "arguments": {
+    "video": false,
+    "video_length": 200,
+    "disable_fabric": false,
+    "num_envs": 1,
+    "task": "Mongo-Flat-Play-v0",
+    "seed": null,
+    "real_time": false,
+    "external_force_iterations": "auto",
+    "export_dir": "/home/inin/workspace/Mongo_RL/mujoco/policies/flat_2026-10-26_21-35-54_model_8500/exported",
+    "motor_speed_limits": "auto",
+    "max_steps": 2,
+    "viewer_robot": false,
+    "script": "none",
+    "script_duration": 8.0,
+    "script_coupled_duration": null,
+    "script_height_center": 0.37,
+    "script_height_amp": 0.08,
+    "script_vel_max": 0.8,
+    "script_yaw_max": 2.0,
+    "front_arm_upper_margin_deg": 0.0,
+    "camera": "global",
+    "plot_dir": "/home/inin/workspace/Mongo_RL/mujoco/policies/flat_2026-10-26_21-35-54_model_8500/play_audit",
+    "plot_env_index": 0,
+    "no_plot_export": false,
+    "experiment_name": null,
+    "run_name": null,
+    "resume": false,
+    "load_run": null,
+    "checkpoint": "/home/inin/workspace/Mongo_RL/logs/rsl_rl/mongo_flat_direct/2026-10-26_21-35-54/model_8500.pt",
+    "resume_training": false,
+    "logger": null,
+    "log_project_name": null,
+    "clip_actions": null,
+    "enable_cameras": false,
+    "xr": false,
+    "device": "cuda:0",
+    "cpu": false,
+    "verbose": false,
+    "info": false,
+    "rendering_mode": null,
+    "kit_args": "",
+    "anim_recording_enabled": false,
+    "anim_recording_start_time": 0,
+    "anim_recording_stop_time": 10,
+    "headless": true,
+    "hide_ui": true,
+    "create_new_stage": false,
+    "physics_gpu": 0,
+    "active_gpu": 0
+  },
+  "physics_resolution": {
+    "field": "enable_external_forces_every_iteration",
+    "selection": "auto",
+    "source": "training_snapshot",
+    "training_snapshot": "/home/inin/workspace/Mongo_RL/logs/rsl_rl/mongo_flat_direct/2026-10-26_21-35-54/params/env.yaml",
+    "recorded_value": true,
+    "current_source_value": true,
+    "effective_value": true,
+    "supported": true
+  },
+  "velocity_resolution": {
+    "effective_value": "position_delta",
+    "current_source_value": "position_delta",
+    "source": "training_snapshot"
+  },
+  "motor_speed_resolution": {
+    "legs_act": {
+      "enabled": true,
+      "taper_start_fraction": 0.9,
+      "source": "training_snapshot"
+    },
+    "front_arm": {
+      "enabled": true,
+      "taper_start_fraction": 0.9,
+      "source": "training_snapshot"
+    },
+    "wheel": {
+      "enabled": true,
+      "taper_start_fraction": 0.9,
+      "source": "training_snapshot"
+    }
+  },
+  "config_note": "Other fields still come from current task source, not a full training YAML restore."
+}

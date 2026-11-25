@@ -1,0 +1,19 @@
+{
+  "training_run": "logs/rsl_rl/mongo_flat_direct/2026-10-23_06-36-19",
+  "checkpoint": "model_11000.pt",
+  "checkpoint_sha256": "999c84a8329c52dd1e43ae394f1121d10bdd6cc326ecacd08be9c7945aa1ed7a",
+  "files_sha256": {
+    "exported/action_processor.pt": "7a8b07b3257d38ea1fffded482d9d0fa1f5f6d734139cb0db2a961e3ce944773",
+    "exported/deployment_config.json": "8d0454dbbede8320e0805c729ccbb07d4795e9c1fefb555420ff552b213df185",
+    "exported/policy.onnx": "bca574d819263ce65ce75325b71596dbc7981ad145ed9cf4a7e6db82121ec1c6",
+    "exported/policy.pt": "f63a64e509406fbbee5fef77b55071df7a45cc88900eaa23c23e982f58209e81",
+    "params/agent.yaml": "a517e456c529bdb76d09f728f2f5c2c98e404b4ff3d4eb11457f016c97fe98a3",
+    "params/env.yaml": "f1b1d44c6e59932e6e080bcf4b5a75ae0b4228562411401130ab2f989bf7ac32"
+  },
+  "verification": {
+    "checkpoint_matches_torchscript": true,
+    "onnx_torchscript_max_abs_error": 1.430511474609375e-06
+  },
+  "selected_date": "2026-10-24",
+  "note": "Frozen export for MuJoCo. Isaac TGS external-force iteration flag has no direct MuJoCo equivalent."
+}

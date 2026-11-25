@@ -1,0 +1,916 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="wl0901">
+  <link
+    name="wlbody">
+    <inertial>
+      <origin
+        xyz="-0.006538 0.000240 -0.003808"
+        rpy="0 0 0" />
+      <mass
+        value="6.355" />
+      <inertia
+          ixx="0.051899343"
+          ixy="0.000243114"
+          ixz="0.000419453"
+          iyy="0.053298338"
+          iyz="0.000069896"
+          izz="0.077555411" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/wlbody.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/wlbody.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="left_thigh">
+    <inertial>
+      <origin
+        xyz="-0.142809 0.001410 0.003708"
+        rpy="0 0 0" />
+      <mass
+        value="0.503" />
+      <inertia
+        ixx="0.000244717"
+        ixy="-0.000012566"
+        ixz="-0.000071175"
+        iyy="0.003435079"
+        iyz="-0.000001063"
+        izz="0.003428325" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/left_thigh.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/left_thigh.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hip_joint"
+    type="continuous">
+    <origin
+      xyz="0.0000 0.09205 0.0000"
+      rpy="0 0 0" />
+    <parent
+      link="wlbody" />
+    <child
+      link="left_thigh" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="left_calf">
+    <inertial>
+      <origin
+        xyz="0.177504 0.016075 -0.119701"
+        rpy="0 0 0" />
+      <mass
+        value="1.260" />
+      <inertia
+        ixx="0.003573089"
+        ixy="-0.000758967"
+        ixz="0.004725942"
+        iyy="0.011302557"
+        iyz="0.000463812"
+        izz="0.008325389" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/left_calf.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/left_calf.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_knee_joint"
+    type="continuous">
+    <origin
+      xyz="-0.21500 0 0.00001"
+      rpy="0 0 0" />
+    <parent
+      link="left_thigh" />
+    <child
+      link="left_calf" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="left_wheel">
+    <inertial>
+      <origin
+        xyz="0.000003 0.104298 0.000004"
+        rpy="0 0 0" />
+      <mass
+        value="0.852" />
+      <inertia
+        ixx="0.003700214"
+        ixy="0.000000139"
+        ixz="-0.000000047"
+        iyy="0.006590621"
+        iyz="0.000000196"
+        izz="0.003700181" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/left_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/left_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_podarthrum_joint"
+    type="continuous">
+    <origin
+      xyz="0.21500 0 -0.14261"
+      rpy="0 0 0" />
+    <parent
+      link="left_calf" />
+    <child
+      link="left_wheel" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="left_parallel_1">
+    <inertial>
+      <origin
+        xyz="0.053127 0.000355 0.004457"
+        rpy="0 0 0" />
+      <mass
+        value="0.139" />
+      <inertia
+        ixx="0.000028209"
+        ixy="0.000005698"
+        ixz="0.000001524"
+        iyy="0.000285816"
+        iyz="0.000000221"
+        izz="0.000261741" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/left_parallel_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/left_parallel_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_parallel_1_joint"
+    type="continuous">
+    <origin
+      xyz="0.0000 0.09205 0.0000"
+      rpy="0 0 0" />
+    <parent
+      link="wlbody" />
+    <child
+      link="left_parallel_1" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="left_parallel_2">
+    <inertial>
+      <origin
+        xyz="-0.049187 0.009419 -0.035676"
+        rpy="0 0 0" />
+      <mass
+        value="0.063" />
+    <inertia
+      ixx="0.000045630"
+      ixy="-0.000003596"
+      ixz="-0.000063100"
+      iyy="0.000141040"
+      iyz="-0.000001835"
+      izz="0.000100009" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/left_parallel_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/left_parallel_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_parallel_2_joint"
+    type="continuous">
+    <origin
+      xyz="0.09800 0 0.00001"
+      rpy="0 0 0" />
+    <parent
+      link="left_parallel_1" />
+    <child
+      link="left_parallel_2" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="left_parallel_3">
+    <inertial>
+      <origin
+        xyz="-0.083803 0.000471 0.063532"
+        rpy="0 0 0" />
+      <mass
+        value="0.066" />
+      <inertia
+        ixx="0.000109030"
+        ixy="-0.000000492"
+        ixz="0.000123669"
+        iyy="0.000263024"
+        iyz="0.000000433"
+        izz="0.000155889" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/left_parallel_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/left_parallel_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_parallel_3_joint"
+    type="continuous">
+    <origin
+      xyz="-0.09800 0 -0.06501"
+      rpy="0 0 0" />
+    <parent
+      link="left_parallel_2" />
+    <child
+      link="left_parallel_3" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="left_parallel_4">
+    <inertial>
+      <origin
+        xyz="-0.073346 0.009011 0.000004"
+        rpy="0 0 0" />
+      <mass
+        value="0.070" />
+      <inertia
+        ixx="0.000005053"
+        ixy="-0.000010163"
+        ixz="0.000000007"
+        iyy="0.000139239"
+        iyz="0.000000001"
+        izz="0.000140893" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/left_parallel_4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/left_parallel_4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_parallel_4_joint"
+    type="continuous">
+    <origin
+      xyz="-0.14169 0 0.11448"
+      rpy="0 0 0" />
+    <parent
+      link="left_parallel_3" />
+    <child
+      link="left_parallel_4" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="right_thigh">
+    <inertial>
+      <origin
+        xyz="-0.142809 -0.001387 0.003708"
+        rpy="0 0 0" />
+      <mass
+        value="0.503" />
+      <inertia
+        ixx="0.000244749"
+        ixy="0.000012050"
+        ixz="-0.000071175"
+        iyy="0.003435079"
+        iyz="0.000001106"
+        izz="0.003428357" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/right_thigh.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/right_thigh.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hip_joint"
+    type="continuous">
+    <origin
+      xyz="0.0000 -0.09205 0.0000"
+      rpy="0 0 0" />
+    <parent
+      link="wlbody" />
+    <child
+      link="right_thigh" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="right_calf">
+    <inertial>
+      <origin
+        xyz="0.177503 -0.016075 -0.119704"
+        rpy="0 0 0" />
+      <mass
+        value="1.260" />
+      <inertia
+        ixx="0.003573203"
+        ixy="0.000758902"
+        ixz="0.004126001"
+        iyy="0.011302542"
+        iyz="-0.000463911"
+        izz="0.008325261" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/right_calf.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/right_calf.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_knee_joint"
+    type="continuous">
+    <origin
+      xyz="-0.215 0 0.00001"
+      rpy="0 0 0" />
+    <parent
+      link="right_thigh" />
+    <child
+      link="right_calf" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="right_wheel">
+    <inertial>
+      <origin
+        xyz="0.000005 -0.104298 -0.000002"
+        rpy="0 0 0" />
+      <mass
+        value="0.852" />
+      <inertia
+        ixx="0.003700162"
+        ixy="-0.000000222"
+        ixz="0.000000036"
+        iyy="0.006590621"
+        iyz="0.000000093"
+        izz="0.003700233" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/right_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/right_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_podarthrum_joint"
+    type="continuous">
+    <origin
+      xyz="0.215 0 -0.14261"
+      rpy="0 0 0" />
+    <parent
+      link="right_calf" />
+    <child
+      link="right_wheel" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="right_parallel_1">
+    <inertial>
+      <origin
+        xyz="0.053127 -0.000355 0.004457"
+        rpy="0 0 0" />
+      <mass
+        value="0.139" />
+      <inertia
+        ixx="0.000028207"
+        ixy="-0.000005698"
+        ixz="0.000001523"
+        iyy="0.000285816"
+        iyz="-0.000000221"
+        izz="0.000261743" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/right_parallel_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/right_parallel_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_parallel_1_joint"
+    type="continuous">
+    <origin
+      xyz="0.0000 -0.09205 -0.0000"
+      rpy="0 0 0" />
+    <parent
+      link="wlbody" />
+    <child
+      link="right_parallel_1" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="right_parallel_2">
+    <inertial>
+      <origin
+        xyz="-0.049187 -0.009266 -0.035676"
+        rpy="0 0 0" />
+      <mass
+        value="0.063" />
+      <inertia
+        ixx="0.000045810"
+        ixy="0.000004064"
+        ixz="-0.000063100"
+        iyy="0.000141040"
+        iyz="0.000002116"
+        izz="0.000100189" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/right_parallel_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/right_parallel_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_parallel_2_joint"
+    type="continuous">
+    <origin
+      xyz="0.09800 0 -0.00001"
+      rpy="0 0 0" />
+    <parent
+      link="right_parallel_1" />
+    <child
+      link="right_parallel_2" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="right_parallel_3">
+    <inertial>
+      <origin
+        xyz="-0.083803 0.000729 0.063532"
+        rpy="0 0 0" />
+      <mass
+        value="0.066" />
+      <inertia
+        ixx="0.000109030"
+        ixy="0.000000492"
+        ixz="0.000123669"
+        iyy="0.000263024"
+        iyz="-0.000000433"
+        izz="0.000155889" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/right_parallel_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/right_parallel_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_parallel_3_joint"
+    type="continuous">
+    <origin
+      xyz="-0.09800 0 -0.06501"
+      rpy="0 0 0" />
+    <parent
+      link="right_parallel_2" />
+    <child
+      link="right_parallel_3" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="right_parallel_4">
+    <inertial>
+      <origin
+        xyz="-0.073346 -0.009011 0.000004"
+        rpy="0 0 0" />
+      <mass
+        value="0.070" />
+      <inertia
+        ixx="0.000005053"
+        ixy="0.000010163"
+        ixz="0.000000006"
+        iyy="0.000139239"
+        iyz="-0.000000001"
+        izz="0.000140892" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/right_parallel_4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/right_parallel_4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_parallel_4_joint"
+    type="continuous">
+    <origin
+      xyz="-0.14169 0 0.11448"
+      rpy="0 0 0" />
+    <parent
+      link="right_parallel_3" />
+    <child
+      link="right_parallel_4" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="front_leg">
+    <inertial>
+      <origin
+        xyz="0.164547 0.000922 -0.004265"
+        rpy="0 0 0" />
+      <mass
+        value="0.671" />
+      <inertia
+        ixx="0.000922470"
+        ixy="0.000097251"
+        ixz="0.000022634"
+        iyy="0.002895747"
+        iyz="-0.000001108"
+        izz="0.002380420" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/front_leg.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/front_leg.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_hip_joint"
+    type="revolute">
+    <origin
+      xyz="0.07125 -0.00375 -0.11050"
+      rpy="0 0 0" />
+    <parent
+      link="wlbody" />
+    <child
+      link="front_leg" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.5"
+      upper="2.0"
+      effort="10"
+      velocity="30" />
+  </joint>
+  <link
+    name="front_wheel">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.060" />
+      <inertia
+        ixx="0.000014368"
+        ixy="0.000000000"
+        ixz="0.000000000"
+        iyy="0.000024610"
+        iyz="0.000000000"
+        izz="0.000014369" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/front_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/front_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_podarthrum_joint"
+    type="continuous">
+    <origin
+      xyz="0.22173 0 -0.09184"
+      rpy="0 0 0" />
+    <parent
+      link="front_leg" />
+    <child
+      link="front_wheel" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <loop_joint name="left_connect_1" type="spherical">
+    <link1 link="left_thigh" rpy="0 0 0" xyz="-0.09800 0 0"/>
+    <link2 link="left_parallel_3" rpy="0 0 0" xyz="-0.09800 0 0.06500"/>
+  </loop_joint>
+  <loop_joint name="left_connect_2" type="spherical">
+    <link1 link="left_calf" rpy="0 0 0" xyz="-0.04368 0 0.04947"/>
+    <link2 link="left_parallel_4" rpy="0 0 0" xyz="-0.11700 0 0.00001"/>
+  </loop_joint>
+    <loop_joint name="right_connect_1" type="spherical">
+    <link1 link="right_thigh" rpy="0 0 0" xyz="-0.09800 0 0"/>
+    <link2 link="right_parallel_3" rpy="0 0 0" xyz="-0.09800 0 0.06500"/>
+  </loop_joint>
+  <loop_joint name="right_connect_2" type="spherical">
+    <link1 link="right_calf" rpy="0 0 0" xyz="-0.04368 0 0.04947"/>
+    <link2 link="right_parallel_4" rpy="0 0 0" xyz="-0.11700 0 0.00001"/>
+  </loop_joint>
+</robot> 
